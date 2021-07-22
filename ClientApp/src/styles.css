@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Provide sufficient contrast against white background */
+
+body {
+  background-color:  rgb(247, 247, 232);
+}
+
 a {
   color: #0366d6;
 }

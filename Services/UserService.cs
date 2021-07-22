@@ -23,7 +23,10 @@ namespace angular_netcore_jwt.Services
     {
         private List<User> _users = new List<User>
         {
-            new User { Id = 1, FirstName = "Test", LastName = "User", Username = "test", Password = "test" }
+            new User { Id = 1, FirstName = "Test", LastName = "User", UserName = "test", Password = "test" },
+            new User { Id = 2, FirstName =  "ADMIN 1", LastName = "ADMIN 1", UserName = "admin1", Password = "admin1" },
+            new User { Id = 2, FirstName =  "ADMIN 2", LastName = "ADMIN 2", UserName = "admin2", Password = "admin2" },
+            new User { Id = 2, FirstName =  "ADMIN 3", LastName = "ADMIN 3", UserName = "admin3", Password = "admin3" },
         };
         
         private readonly AppSettings _appSettings;
@@ -36,7 +39,7 @@ namespace angular_netcore_jwt.Services
 
         public AuthenticateResponse Authenticate(AuthenticateRequest model)
         {
-            var user = _users.SingleOrDefault(x => x.Username == model.Username && x.Password == model.Password);
+            var user = _users.SingleOrDefault(x => x.UserName == model.Username && x.Password == model.Password);
             if (user == null)
                 return null;
 
